@@ -74,26 +74,19 @@ HWND CreateToolbarFromResource(HWND hWndParent)
 		return NULL;
 
 	// Create the image list.
-	g_hImageList = ImageList_Create(bitmapSize, bitmapSize, // Dimensions of individual bitmaps.
-		ILC_COLOR16 | ILC_MASK, // Ensures transparent background.
-		numButtons, 0);
+	//g_hImageList = ImageList_Create(bitmapSize, bitmapSize, // Dimensions of individual bitmaps.
+		//ILC_COLOR16 | ILC_MASK, // Ensures transparent background.
+		//numButtons, 0);
 
 	// Set the image list.
-	SendMessage(hWndToolbar, TB_SETIMAGELIST,
-		(WPARAM)ImageListID,
-		(LPARAM)g_hImageList);
-	HICON hicon;
-
-	for (int i = 0; i++; i < numButtons)
-	{
-		hicon = LoadIcon(hInst, MAKEINTRESOURCE(IDI_BIRD));
-		ImageList_AddIcon(g_hImageList, hicon);
-	}
+	//SendMessage(hWndToolbar, TB_SETIMAGELIST,
+		//(WPARAM)ImageListID,
+		//(LPARAM)g_hImageList);
 
 	// Load the button images.
-	SendMessage(hWndToolbar, TB_LOADIMAGES,
-		(WPARAM)IDB_STD_SMALL_COLOR,
-		(LPARAM)HINST_COMMCTRL);
+	//SendMessage(hWndToolbar, TB_LOADIMAGES,
+		//(WPARAM)IDB_STD_SMALL_COLOR,
+		//(LPARAM)HINST_COMMCTRL);
 
 	int iNew = SendMessage(hWndToolbar, TB_ADDSTRING,
 		(WPARAM)hInst, (LPARAM)IDS_BUTTONPEN);
